@@ -6,7 +6,7 @@ def pyWriteGTiff(rasterfile,out_name):
     driver = gdal.GetDriverByName("GTiff")
     driver.Register()
 
-        # la apro in GDAL
+    # la apro in GDAL
     #rasterfile = gdal.Open(rasterfile_nome)
     # conto le bande
     rasterfile_nbands = rasterfile.RasterCount
