@@ -16,9 +16,6 @@ def image_creator(rasterfile,classificata,num,pos_out,out_name):
         driver = gdal.GetDriverByName("GTiff")
         driver.Register()
 
-        # pos00 = "U:/PaA/08_SMEX02/00_Input_data/LANDSAT_1july2002"
-        # os.chdir(pos00)
-        # rasterfile = gdal.Open("20020701_Landsat")
         rasterfile_nbands = rasterfile.RasterCount
         rasterfile_3Darray = np.empty((rasterfile.RasterYSize, rasterfile.RasterXSize, rasterfile.RasterCount))
 
@@ -28,9 +25,8 @@ def image_creator(rasterfile,classificata,num,pos_out,out_name):
         # Prendo i driver di ENVI
         #driver = gdal.GetDriverByName("ENVI")
         #driver.Register()
-        #pos01 = "U:/PaA/08_SMEX02/00_Input_data/Classificata/landsat"
-        #os.chdir(pos01)
-        #classificata = gdal.Open("classificata_20020701")
+
+
         classificata_array = classificata.ReadAsArray(0, 0, classificata.RasterXSize, classificata.RasterYSize)
         # ReadAsArray vuole prima le colonne e poi le righe
         indclass1 = np.nonzero(classificata_array == 1)
