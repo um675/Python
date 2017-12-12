@@ -1,3 +1,8 @@
+#rasterfile -> The raster image that has to be simulated
+#classificata -> A classification map of rasterfile in 10 classes
+#num -> number of simulated maps you want to have
+#pos_out -> output filder
+#out_name -> output filename
 def image_creator(rasterfile,classificata,num,pos_out,out_name):
     import numpy as np
     import gdal
